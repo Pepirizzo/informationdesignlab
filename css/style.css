@@ -1,0 +1,251 @@
+@font-face {
+    font-family: "Waldenburg-bold";
+    src: url("../font/KMR-Waldenburg-Halbfett.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Waldenburg-regular";
+    src: url("../font/KMR-Waldenburg-Buch.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "IBMPlexMono-extralight";
+    src: url("../font/IBMPlexMono-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "IBMPlexMono-light";
+    src: url("../font/IBMPlexMono-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "IBMPlexMono-regular";
+    src: url("../font/IBMPlexMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "IBMPlexMono-thin";
+    src: url("../font/IBMPlexMono-Thin.ttf") format("truetype");
+}
+
+body {
+    
+    color: white;
+    
+    background-color: black; /* For browsers that do not support gradients */
+    background-image: linear-gradient(black, rgb(23, 23, 23));
+}
+
+.hero {
+    font-family: "Waldenburg-regular";
+    font-size: 100px;
+   line-height: 1.1;
+    margin-top: 300px;
+    margin-bottom: 20px;
+   
+}
+
+.bg {
+
+ 
+        background-size: cover;
+        position: relative;
+}
+
+.op {
+
+    opacity: 0.4;
+}
+
+.over {
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+   
+}
+
+.section {
+    font-family: "IBMPlexMono-light";
+    font-size: 18px;
+    
+}
+
+.menu1 {
+    margin-top: -16px;
+    border-bottom-style: solid;
+    
+}
+
+.menu2 {
+    border-bottom-style: solid;
+}
+
+.divisor {
+
+    border-bottom-style: solid;
+    border-color: rgb(31, 31, 31);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    
+}
+
+.source {
+
+
+    font-family: "IBMPlexMono-light";
+    font-size: 12px;
+
+
+}
+
+.font {
+    font-family: "IBMPlexMono-thin";
+    font-size: 15px;
+}
+
+p {
+    font-family: "IBMPlexMono-thin";
+    font-size: 15px;
+}
+
+.what {
+    font-family: "IBMPlexMono-thin";
+    font-size: 15px;
+}
+
+
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+img.pictures {
+    margin: 20px;
+    padding: 3px;
+    float: left;
+    -webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+    transition: margin 0.5s ease-outss;
+}
+
+img.pictures:hover {
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.game {
+    font-family: "Waldenburg-regular";
+    font-size: 50px;
+    line-height: 90%;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: "IBMPlexMono-regular";
+    font-size: 16px;
+    line-height: 90%;
+    margin-bottom: 20px;
+}
+
+.bold {
+    font-family: "IBMPlexMono-regular";
+    
+}
+
+.underline {
+    text-decoration: underline;
+    
+}
+
+
+
+.footer {
+    font-family: "IBMPlexMono-thin";
+    font-size: 10px;
+    line-height: 1.3;
+    margin-top: 40px;
+}
+
+.thumbnail > img {
+    height: 4.5rem;
+    transition: transform 0.5s ease-in-out;
+}
+
+.thumbnail > img:hover {
+    transform: scale(120%);
+}
+
+.description {
+
+    margin-top: 40px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        font-size: 80px;
+    }
+
+    .section {
+        font-size: 16px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .btn {
+        background-color: black;
+        border: solid 1px white;
+        color: white;
+        font-family: "HK-grotesk-medium";
+        padding: 15px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 1px
+    }
+
+    .hero {
+       
+        margin-top: 20px;
+     
+       
+    }
+
+    .carousel {
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+}

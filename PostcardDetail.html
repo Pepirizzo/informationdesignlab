@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grüße aus [ort]</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="container-fluid" x-data="{ id: postcardId, data: data, random: random }">
+        <div class="row min-vh-100">
+            <div class="col-12 col-md-6 mt-5">
+                <a href="./HistoricalPostcards.html" class="font-link d-flex align-items-center"><img class="img-fluid arrow pe-1" src="img/arrow_circle_left.svg" width="30"
+                    height="30">Indietro</a>
+              
+                <img class="img-fluid mt-3" style="height: 600px;" x-bind:src="data[id]['full_image']" alt="id">
+
+                <div class="ms-4 mt-3 font-bold">Anno:<span x-text="data[id]['year']" class="font"></span></div>
+                <div class="ms-4 font-bold">Paese:<span x-text="data[id]['country_id']" class="font"></span></div>
+                <div class="ms-4 font-bold">Città:<span x-text="data[id]['city']" class="font"></span></div>
+                <div class="ms-4 font-bold">Edificio:<span x-text="data[id]['building']" class="font"></span></div>
+                <div class="ms-4 font-bold">Lat:<span x-text="data[id]['latitude']" class="font"></div>
+                <div class="ms-4 font-bold">Long:<span x-text="data[id]['longitude']" class="font"></span></div>
+                <a x-bind:href="'./PostcardDetail.html?postcard=' + random" class="btn btn-primary ms-4">Genera</a>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="row min-vh-100">
+                    <div class="col-12">
+                        <div class="h-100" id="map"></div>
+                    </div>
+                    <div class="col-12">
+                        <div class="h-100" id="pano"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <!-- Carico i dati, avrò disponibile le variabili `json` e `data` -->
+    <script src="js/data.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initialize&v=weekly"
+        defer></script>
+    <script>
+        const postcardId = new URLSearchParams(location.search).get('postcard')
+        const random = Object.keys(data)[Math.floor(Math.random() * Object.keys(data).length)];
+        function initialize() {
+            const fenway = { lat: data[postcardId]['latitude'], lng: data[postcardId]['longitude'] };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: fenway,
+                zoom: 14,
+            });
+            const panorama = new google.maps.StreetViewPanorama(
+                document.getElementById("pano"),
+                {
+                    position: fenway,
+                    pov: {
+                        heading: 34,
+                        pitch: 10,
+                    },
+                },
+            );
+
+            map.setStreetView(panorama);
+        }
+
+        window.initialize = initialize;
+    </script>
+</body>
