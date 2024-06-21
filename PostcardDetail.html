@@ -14,18 +14,21 @@
     <div class="container-fluid" x-data="{ id: postcardId, data: data, random: random }">
         <div class="row min-vh-100">
             <div class="col-12 col-md-6 mt-5">
-                <a href="./HistoricalPostcards.html" class="font-link d-flex align-items-center"><img class="img-fluid arrow pe-1" src="img/arrow_circle_left.svg" width="30"
-                    height="30">Indietro</a>
+                <a href="./HistoricalPostcards.html" class="font-link d-flex align-items-center"><img class="img-fluid arrow pe-1" src="img/arrow_circle_left.svg" width="24"
+                    height="24">Indietro</a>
+
+                    <div class="ms-4 mt-3 me-4"><p class="font">Esplora la cartolina e i meravigliosi luoghi che racchiude attraverso Google Maps e Google Street View. Per cambiare cartolina, <b class="font-bold">clicca sul pulsante</b>. Una cartolina verrà casualmente selezionata dalle 100 dell'archivio per trasportati in un'altra nuova realtà.</p></div>
+                    
               
                 <img class="img-fluid mt-3" style="height: 500px; padding-left: 25px;" x-bind:src="data[id]['full_image']" alt="id">
 
-                <div class="ms-4 mt-3 font-bold">Anno:<span x-text="data[id]['year']" class="font"></span></div>
+                <div class="ms-4 mt-4 font-bold">Anno:<span x-text="data[id]['year']" class="font"></span></div>
                 <div class="ms-4 font-bold">Paese:<span x-text="data[id]['country_id']" class="font"></span></div>
                 <div class="ms-4 font-bold">Città:<span x-text="data[id]['city']" class="font"></span></div>
                 <div class="ms-4 font-bold">Edificio:<span x-text="data[id]['building']" class="font"></span></div>
                 <div class="ms-4 font-bold">Lat:<span x-text="data[id]['latitude']" class="font"></div>
                 <div class="ms-4 font-bold">Long:<span x-text="data[id]['longitude']" class="font"></span></div>
-                <a x-bind:href="'./PostcardDetail.html?postcard=' + random" class="btn btn-primary ms-4">Genera</a>
+                <a x-bind:href="'./PostcardDetail.html?postcard=' + random" class="btn btn-primary ms-4">Esplora</a>
             </div>
             <div class="col-12 col-md-6">
                 <div class="row min-vh-100">

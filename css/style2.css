@@ -38,7 +38,7 @@ body {
     color: white;
 }
 
-a:link {
+a .font-link:link {
     color: white;
     text-decoration: none;
 }
@@ -52,6 +52,7 @@ a:visited {
 /* mouse over link */
 a:hover {
     color: white;
+    text-decoration: underline;
 }
 
 /* selected link */
